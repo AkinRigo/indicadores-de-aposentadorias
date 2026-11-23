@@ -55,12 +55,14 @@ Comecei por uma única espécie para validar a arquitetura completa antes de exp
 
 ## ✨ Principais funcionalidades
 
-- **Extração da fonte oficial:** consulta a API do portal de Dados Abertos do INSS para descobrir o arquivo da competência, com ETag e tamanho. Só baixa se o arquivo local faltar ou tiver MD5 diferente.
-- **Transformação:** lê a planilha, filtra a espécie 041, padroniza os códigos (zeros à esquerda), separa código e nome, calcula a idade na DIB e guarda só o ano de nascimento.
-- **Carga idempotente:** compara a ETag do portal com a do `controle_carga`. Se for igual, nada é duplicado. Se o INSS trocou o arquivo, avisa que o banco não está de acordo com o portal e recarrega. Ao final, confere se a quantidade gravada bate com a esperada.
-- **Rejeitadas auditáveis:** linhas com erro vão para `data/rejeitadas/<competencia>.csv` com o motivo (`dado_ausente`, `idade_implausivel`, `duplicada`). Aceitas + rejeitadas = total da planilha.
-- **Testes automatizados:** 92 testes cobrindo conformidade, integridade referencial e detecção de anomalias.
-- **Painel no Power BI:** total concedido, % até o fundamental completo, maior grupo de escolaridade, % sem escolaridade informada e concessões por escolaridade, com filtro por competência.
+- Ver **quantas aposentadorias por idade** o INSS concedeu no mês.
+- Conhecer o **perfil de escolaridade** de quem se aposenta: quanto chega até o ensino fundamental e qual é o maior grupo.
+- Saber **quanto da informação veio incompleta** do próprio INSS (escolaridade não informada).
+- Comparar as escolaridades em um **gráfico**, ordenando por nível ou por quantidade, com o percentual de cada uma.
+- **Escolher a competência** (mês) que deseja analisar.
+- **Baixar o painel do Power BI** para criar suas próprias análises com os mesmos dados.
+- Acessar pelo **computador ou celular**.
+- **Confiar nos números:** cada valor vem do arquivo oficial do INSS, conferido e sem duplicidade, e as linhas descartadas ficam registradas com o motivo.
 
 ---
 
