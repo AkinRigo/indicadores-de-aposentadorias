@@ -1,0 +1,30 @@
+# Dados (LGPD: a base não é versionada)
+data/
+
+# Variáveis de ambiente (credenciais do PostgreSQL)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Power BI (arquivos locais de cache)
+*.pbix.bak
+
+# IDEs e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

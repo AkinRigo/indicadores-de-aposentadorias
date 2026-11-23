@@ -1,0 +1,24 @@
+[project]
+name = "indicadore-aposentadorias"
+version = "0.1.0"
+description = "Mini Central de Indicadores — Aposentadoria por idade (INSS, espécie 041)"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32",        # extrair: API CKAN + download do S3
+    "pandas>=3.1",           # transformar: filtro 041, limpeza, dimensões
+    "openpyxl>=3.1",         # leitura do XLSX pelo pandas
+    "python-calamine>=0.3",  # leitor rápido de XLSX (engine="calamine")
+    "psycopg[binary]>=3.2",  # driver PostgreSQL
+    "sqlalchemy>=2.1",       # conexão usada pelo Alembic e pela carga
+    "alembic>=1.20",         # migrações do schema
+    "python-dotenv>=1.0",    # lê a conexão do .env
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",           # testes de transformação e integridade
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
